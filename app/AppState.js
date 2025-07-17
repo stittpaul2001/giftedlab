@@ -1,6 +1,7 @@
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
+
 class ObservableAppState extends EventEmitter {
 
   user = null
@@ -8,6 +9,10 @@ class ObservableAppState extends EventEmitter {
   account = null
 
 
+  identity = null
+
+  /**@type {any} */
+  gifts = []
 
 }
 

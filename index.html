@@ -22,7 +22,7 @@
       <a class="navbar-brand" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ml-2">giftedlab</span>
+        <span class="ml-2 fs-1 fw-bold text-danger px-2">Gifted</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,14 +40,35 @@
 
   <!-- SECTION -->
   <main>
-    <section>
-
-
-    </section>
 
     <div class="container-fluid">
       <div class="row">
+        <div class="col-md-3 bg-success">
+          <h1 class="text-decoration-underline text-center fw-bold">Gifted</h1>
+          <form onsubmit="app.giftsController.addGift()">
+            <label class="d-block mb-1 fw-bold" for="tag">Tag Gift</label>
+            <input id="tag" name="tag" type="text" maxlength="120" class="mb-2 w-100" required>
+            <label class="d-block mb-1 fw-bold" for="url">Image URL</label>
+            <input id="url" name="url" type="url" maxlength="500" class="mb-2 w-100" required>
+            <button class="btn btn-danger btn-outline-dark fw-bold mb-2" type="reset">Reset</button>
+            <button class="btn btn-warning btn-outline-dark text-light fw-bold mb-2" type="submit">Submit</button>
+          </form>
+
+        </div>
         <div class="col-md-9">
+          <div class="border border-3 border-danger mt-2">
+            <div id="listGifts" class="row">
+              <h1 class="fw-bold text-center text-decoration-underline">Gifts</h1>
+              <!-- //STUB - Image cards will be here -->
+
+              <!-- <div class="col-4">
+                <div class="card m-3 border border-3 border-primary">
+                  <img class="text-center rounded-4 border border-solid border-dark mt-1" src="" alt="image of ">
+                  <p class="text-center pt-2"> the tage will go here</p>
+                </div>
+              </div> -->
+            </div>
+          </div>
 
         </div>
       </div>
