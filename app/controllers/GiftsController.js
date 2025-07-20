@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { api } from "../services/AxiosService.js";
 import { giftsService } from "../services/GiftsService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
@@ -57,6 +58,17 @@ export class GiftsController {
 
       // @ts-ignore
       Pop.error(error, 'can not add Gift!')
+    }
+  }
+
+  async deleteGift(giftId) {
+    try {
+      const confirmed = await Pop.confirm('are you sure you want to delete this giph')
+      if (confirmed == false) return
+      await giftsService.deleteGift(giftId)
+    } catch (error) {
+      Pop.toast('could not delete gift')
+      console.error(error)
     }
   }
 

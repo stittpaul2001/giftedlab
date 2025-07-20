@@ -1,10 +1,19 @@
 import { AppState } from "../AppState.js"
 import { Gift } from "../models/Gift.js"
+import { Pop } from "../utils/Pop.js"
 import { api } from "./AxiosService.js"
 
 
 
 class GiftsService {
+  async deleteGift(giftId) {
+    const response = await api.delete(`api/gifts/${giftId}`)
+    console.log(response.data)
+    const giftToRemove = AppState.gifts.find(gift => gift.id == giftId)
+    const indexToRemove = AppState.gifts.indexOf(giftToRemove)
+    AppState.gifts.splice(indexToRemove, 1)
+    Pop.toast(`Gift with the id of ${giftToRemove.id} was deleted!`)
+  }
 
 
   async addGift(formData) {

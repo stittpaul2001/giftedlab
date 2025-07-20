@@ -40,6 +40,22 @@
 
   <!-- SECTION -->
   <main>
+    <section>
+      <div class="offcanvas offcanvas-end show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title fs-1" id="offcanvasLabel">Giphs From Giphy</h5>
+        </div>
+        <div class="offcanvas-body">
+          <label for="search" class="form-label fs-3">Search for a Giph</label>
+          <input class="form-control border border-dark" name="search" id="search-input" type="text"
+            placeholder="Type to search for Giph..." required maxlength="150">
+          <button type="submit" class="btn btn-primary mt-2">Search</button>
+        </div>
+      </div>
+      <div class="">
+
+      </div>
+    </section>
 
     <div class="container-fluid">
       <div class="row">
@@ -50,8 +66,8 @@
             <input id="tag" name="tag" type="text" maxlength="120" class="mb-2 w-100" required>
             <label class="d-block mb-1 fw-bold" for="url">Image URL</label>
             <input id="url" name="url" type="url" maxlength="500" class="mb-2 w-100" required>
-            <button class="btn btn-danger btn-outline-dark fw-bold mb-2" type="reset">Reset</button>
-            <button class="btn btn-warning btn-outline-dark text-light fw-bold mb-2" type="submit">Submit</button>
+            <button class="btn btn-danger btn-outline-dark text-light fw-bold mb-2 fs-3" type="reset">Reset</button>
+            <button class="btn btn-warning btn-outline-dark text-light fw-bold mb-2 fs-3" type="submit">Submit</button>
           </form>
 
         </div>
