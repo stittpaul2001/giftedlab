@@ -4,14 +4,22 @@ import { api, giphyApi } from "./AxiosService.js";
 
 class GiphysService {
 
+
+  async getGifList() {
+    const response = await giphyApi.get('search')
+    console.log('Can i see any gifs??', response.data)
+    const gifs = response.data.data.map(g => g.images.downsized_large.url)
+    AppState.gifs = gifs
+  }
+
   async search(query) {
     console.log('search')
-    const response = await giphyApi.get('search', {
+    const res = await giphyApi.get('search', {
       params: { q: query }
     });
-    console.log('search', response.data)
-    const search = response.data.map(data => new Response(data))
-
+    console.log('search', res.data)
+    const gifs = res.data.data.map(g => g.images.downsized_large.url)
+    AppState.gifs = gifs
   }
 
 

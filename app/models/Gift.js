@@ -11,7 +11,8 @@ export class Gift {
     this.tag = data.tag
     this.creator = data.creator
     this.creatorId = data.creatorId
-
+    this.title = data.title
+    this.type = data.type
   }
 
   get giftTemplate() {
@@ -36,5 +37,15 @@ export class Gift {
     }
   }
 
+
+  // get gifTemplate() {
+  //   return
+  //   ` <div class="col">
+  //       <div class="card m-3 border border-3 border-primary">
+  //         <img class="text-center rounded-4 border border-solid border-dark mt-1" src="${this.url}" alt="a gif: ${this.title}">
+  //               <p class="text-center pt-2">${this.title}</p>
+  //       </div>
+  //     </div>`
+  // }
 
 }

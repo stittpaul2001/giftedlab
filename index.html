@@ -44,15 +44,18 @@
       <div class="offcanvas offcanvas-end show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title fs-1" id="offcanvasLabel">Giphs From Giphy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <label for="search" class="form-label fs-3">Search for a Giph</label>
           <input class="form-control border border-dark" name="search" id="search-input" type="text"
             placeholder="Type to search for Giph..." required maxlength="150">
-          <button type="submit" class="btn btn-primary mt-2">Search</button>
+          <button onclick="app.giphysController.search('query')" type="submit"
+            class="btn btn-primary mt-2">Search</button>
+          <div id="gifs" class="row">
+
+          </div>
         </div>
-      </div>
-      <div class="">
 
       </div>
     </section>

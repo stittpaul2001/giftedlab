@@ -6,6 +6,16 @@ export class Account {
     this.name = data.name
     this.picture = data.picture
     // TODO add additional properties if needed
+    // this.id = data.id
+    // this.opened = data.opened
+    // this.profileIdsOpened = data.profileIdsOpened
+    // this.profilesOpened = data.profilesOpened
+    this.url = data.url
+    this.tag = data.tag
+    this.creator = data.creator
+    this.creatorId = data.creatorId
+    this.title = data.title
+    this.type = data.type
   }
 
   get AccountCardTemplate() {
@@ -40,4 +50,17 @@ export class Account {
   get displayName() {
     return this.nickname || this.name
   }
+
+  // get gifTemplate() {
+  //   return
+  //   ` <div class="col">
+  //       <div class="card m-3 border border-3 border-primary">
+  //         <img class="text-center rounded-4 border border-solid border-dark mt-1" src="${this.url}" alt="a gif: ${this.title}">
+  //               <p class="text-center pt-2">${this.title}</p>
+  //       </div>
+  //     </div>`
+  // }
+
+
+
 }
