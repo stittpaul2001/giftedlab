@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 import { giphysService } from "../services/GiphysService.js"
+import { getFormData } from "../utils/FormHandler.js"
 import { Pop } from "../utils/Pop.js"
 
 
@@ -7,15 +8,17 @@ export class GiphysController {
   constructor() {
 
     console.log('Giphy controller, are you there?')
-    AppState.on('account', this.search)
     AppState.on('account', this.getGifList)
     AppState.on('gifs', this.drawGifs)
   }
 
-  async search(query) {
+  async search() {
     try {
-      console.log('searching for gifs', query)
-      await giphysService.search(query)
+      event.preventDefault()
+      console.log('searching for gifs')
+      const gifForm = event.target
+      const formData = getFormData(gifForm)
+      await giphysService.search(formData)
     } catch (error) {
       console.error('can not search for gif', error)
       // @ts-ignore

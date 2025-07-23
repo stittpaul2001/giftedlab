@@ -7,7 +7,7 @@ import { api } from "./AxiosService.js"
 
 class GiftsService {
   async deleteGift(giftId) {
-    const response = await api.delete(`api/gifts/${giftId}`)
+    const response = await api.delete(`api/gift/${giftId}`)
     console.log(response.data)
     const giftToRemove = AppState.gifts.find(gift => gift.id == giftId)
     const indexToRemove = AppState.gifts.indexOf(giftToRemove)

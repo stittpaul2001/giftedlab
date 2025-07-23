@@ -12,10 +12,10 @@ class GiphysService {
     AppState.gifs = gifs
   }
 
-  async search(query) {
-    console.log('search')
+  async search(formData) {
+    console.log('searching for', formData)
     const res = await giphyApi.get('search', {
-      params: { q: query }
+      params: { q: formData.search }
     });
     console.log('search', res.data)
     const gifs = res.data.data.map(g => g.images.downsized_large.url)
