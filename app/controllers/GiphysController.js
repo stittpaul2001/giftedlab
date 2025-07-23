@@ -8,7 +8,6 @@ export class GiphysController {
   constructor() {
 
     console.log('Giphy controller, are you there?')
-    AppState.on('account', this.getGifList)
     AppState.on('gifs', this.drawGifs)
   }
 
@@ -18,6 +17,7 @@ export class GiphysController {
       console.log('searching for gifs')
       const gifForm = event.target
       const formData = getFormData(gifForm)
+      console.log('From', formData)
       await giphysService.search(formData)
     } catch (error) {
       console.error('can not search for gif', error)
@@ -26,22 +26,14 @@ export class GiphysController {
     }
   }
 
-  async getGifList() {
-    try {
-      await giphysService.getGifList()
-    } catch (error) {
-      console.error('could not search for those gifs', error)
-      // @ts-ignore
-      Pop.error(error, 'could not download gifs!')
-    }
-  }
 
   drawGifs() {
     const gifs = AppState.gifs
     let gifsContent = ''
     gifs.forEach(gif => gifsContent += gif.gifTemplate)
-    const gifsElem = document.getElementById('gifs')
+    const gifsElem = document.getElementById('gifResults')
     gifsElem.innerHTML = gifsContent
+    console.log('gifResults')
 
   }
 

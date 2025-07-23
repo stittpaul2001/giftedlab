@@ -12,6 +12,7 @@ export class GiftsController {
 
     AppState.on('user', this.getGiftList)
     AppState.on('gifts', this.drawGiftsCards)
+    AppState.on('identity', this.deleteGift)
 
   }
 
@@ -68,6 +69,15 @@ export class GiftsController {
       await giftsService.deleteGift(giftId)
     } catch (error) {
       Pop.toast('could not delete gift')
+      console.error(error)
+    }
+  }
+
+  async addOpenGiftButton(giftId) {
+    try {
+      await giftsService.addOpenGiftButton(giftId)
+    } catch (error) {
+      Pop.toast('could not open gift')
       console.error(error)
     }
   }

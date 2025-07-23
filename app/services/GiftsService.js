@@ -1,13 +1,26 @@
 import { AppState } from "../AppState.js"
 import { Gift } from "../models/Gift.js"
 import { Pop } from "../utils/Pop.js"
-import { api } from "./AxiosService.js"
+import { api, giphyApi } from "./AxiosService.js"
 
 
 
 class GiftsService {
+
+  async addOpenGiftButton(giftId) {
+    const giftToOpen = AppState.gifts.find(gift => gift.id == giftId)
+
+    giftToOpen.open = !giftToOpen.open
+
+    const response = await api.open(`api/gift/${giftId}`, giftToOpen)
+    console.log('gift', response.data)
+    AppState.emit('gifts')
+  }
+
+
+
   async deleteGift(giftId) {
-    const response = await api.delete(`api/gift/${giftId}`)
+    const response = await api.delete(`api/gifts/${giftId}`)
     console.log(response.data)
     const giftToRemove = AppState.gifts.find(gift => gift.id == giftId)
     const indexToRemove = AppState.gifts.indexOf(giftToRemove)

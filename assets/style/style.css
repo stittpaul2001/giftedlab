@@ -9,3 +9,18 @@
 .profile-picture.profile-picture-sm {
   height: 64px;
 }
+
+.offcanvas-body-scroll {
+  overflow-y: auto;
+}
+
+.gift-card {
+  height: 60dvh;
+}
+
+.gift-card-image {
+  width: 100%;
+  min-height: 45vh;
+  height: auto;
+  display: flex;
+}

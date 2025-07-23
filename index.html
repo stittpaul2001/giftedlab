@@ -55,7 +55,10 @@
 
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight">Toggle right offcanvas</button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+
+          <div class="offcanvas offcanvas-end offcanvas-body-scroll" tabindex="-1" id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title fs-1" id="offcanvasLabel">Giphs From Giphy</h5> <button type="button"
                 class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -67,32 +70,40 @@
                 <input class="form-control border border-dark" name="search" id="search-input" type="text"
                   placeholder="Type to search for Giph..." required maxlength="150">
                 <button type="submit" class="btn btn-primary mt-2">Search</button>
-                <div id="gifs" class="row">
+                <div id="gifResults">
+
+                  <!-- <body data-bs-spy="scroll" data-bs-target="col-2 px-4"> -->
+                  <!-- <div class="card m-3 border border-3 border-primary">
+              <img class="text-center rounded-4 border border-solid border-dark mt-1 ${this.id}" src="${this.images}" alt="a gif: ${this.title}">
+                <p class="text-center pt-2">${this.title}</p>
+                  <div class="text-start">Copy URL: ${this.url}  </div>
+              </div> -->
+                  <!-- </body> -->
 
                 </div>
-              </div>
             </form>
           </div>
-
-
         </div>
-        <div class="col-md-9">
-          <div class="border border-3 border-danger mt-2">
-            <div id="listGifts" class="row">
-              <h1 class="fw-bold text-center text-decoration-underline">Gifts</h1>
-              <!-- //STUB - Image cards will be here -->
 
-              <!-- <div class="col-4">
+
+      </div>
+      <div class="col-md-9">
+        <div class="border border-3 border-danger mt-2">
+          <div id="listGifts" class="row">
+            <h1 class="fw-bold text-center text-decoration-underline">Gifts</h1>
+            <!-- //STUB - Image cards will be here -->
+
+            <!-- <div class="col-4">
                 <div class="card m-3 border border-3 border-primary">
                   <img class="text-center rounded-4 border border-solid border-dark mt-1" src="" alt="image of ">
                   <p class="text-center pt-2"> the tage will go here</p>
                 </div>
               </div> -->
-            </div>
           </div>
-
         </div>
+
       </div>
+    </div>
     </div>
   </main>
 
